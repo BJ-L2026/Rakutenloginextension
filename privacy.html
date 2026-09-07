@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私权政策 - 乐天插件</title>
+<style>
+body {font-family:system-ui,-apple-system,Segoe UI,Microsoft Yahei,Arial,sans-serif;max-width:900px;margin:32px auto;padding:0 20px;line-height:1.75;color:#222;}
+h1 {font-size:22px;margin-bottom:12px;}
+h2 {font-size:18px;margin-top:28px;margin-bottom:8px;}
+h3 {font-size:16px;margin-top:20px;margin-bottom:6px;}
+ul {padding-left:24px;margin:8px 0;}
+li {margin:6px 0;}
+p {margin:10px 0;}
+</style>
+</head>
+<body>
+
+<h1>隐私权政策</h1>
+<p><strong>最后更新日期：2026‑09‑07</strong></p>
+
+<h2>1. 数据收集与使用</h2>
+<h3>1.1 数据收集</h3>
+<p>我们的Chrome插件<strong>乐天插件</strong>仅收集实现核心账号表单自动填充功能所必需的数据，不会静默采集浏览历史、Cookie、无关网页内容。具体收集情况如下：</p>
+<ul>
+<li><strong>表单页面DOM数据</strong>：内容脚本仅在以下乐天登录域名页面运行，读取登录表单DOM元素，用于账号密码自动填充：
+    <ul>
+        <li>https://glogin.rms.rakuten.co.jp/*</li>
+        <li>https://glogin.gl.rakuten.co.jp/*</li>
+        <li>https://login.account.rakuten.com/*</li>
+    </ul>
+    仅读取登录表单字段，不会读取页面其他无关内容。
+</li>
+<li><strong>用户配置数据</strong>：用户在插件选项页手动录入保存的账号映射、功能配置，存储于浏览器本地存储。</li>
+<li><strong>内网交互业务数据</strong>：用户主动操作插件时，与用户内网服务<code>http://192.168.0.3:8080/*</code>交互产生的请求参数与业务返回数据。</li>
+<li><strong>本地消息通信</strong>：仅允许<code>*://localhost/*</code>向插件发送消息，接收本地localhost发来的业务消息。</li>
+</ul>
+
+<h3>1.2 数据使用</h3>
+<p>我们仅将收集到的数据用于以下目的：</p>
+<ul>
+<li><strong>功能实现</strong>：读取登录页面表单DOM完成账号密码自动填充；读取本地配置完成参数映射；与内网本地服务交互完成业务逻辑；接收localhost本地消息做本地处理。</li>
+<li><strong>用户体验优化</strong>：保存用户自定义配置，插件重启后保留用户设置。</li>
+<li><strong>无额外用途</strong>：所有数据<strong>不用于用户画像、广告推送、数据分析、行为统计</strong>。</li>
+</ul>
+
+<h3>1.3 数据共享</h3>
+<p>我们不会向任何第三方共享用户账号、密码及配置数据，仅存在如下有限的数据流向：</p>
+<ul>
+<li>数据仅发送至<strong>用户自行部署的内网服务 http://192.168.0.3:8080/*</strong>，该服务为本插件唯一外部数据接收方。</li>
+<li>插件仅将账号信息填入乐天登录网页表单，<strong>插件本身不会额外向乐天服务器上传账号密码数据</strong>，表单提交行为由浏览器原生完成。</li>
+<li>仅在法律强制要求、司法机关依法调取的情形下，才会依法提供相关信息。</li>
+<li>不会向开发者服务器、商业第三方、广告服务商传输、出售、泄露任何用户数据。</li>
+</ul>
+
+<h2>2. 数据存储与安全</h2>
+<h3>2.1 数据存储</h3>
+<ul>
+<li><strong>本地配置数据</strong>：账号映射、功能配置存储在浏览器 <code>chrome.storage.local</code>，仅保存在用户本机设备，不会上传至任何公网服务器；插件卸载时该本地存储数据将被清除。</li>
+<li><strong>表单临时数据</strong>：登录页面读取的表单字段仅在浏览器内存临时处理，<strong>不会持久落地保存</strong>，页面关闭后即失效。</li>
+<li><strong>内网接口交互数据</strong>：仅内存临时处理，插件不持久化保存接口返回内容。</li>
+<li><strong>localhost消息数据</strong>：仅内存临时处理，不做持久存储。</li>
+</ul>
+
+<h3>2.2 数据安全</h3>
+<ul>
+<li>全部数据处理均发生在用户本地浏览器环境。</li>
+<li>插件不会向外网发送账号密码、用户配置等敏感信息。</li>
+<li>所有权限仅用于实现声明的核心功能，不存在多余权限。</li>
+</ul>
+
+<h2>3. 用户权利</h2>
+<h3>3.1 访问与更正</h3>
+<p>用户可以通过插件的选项设置页面查看、修改已保存的账号与配置；如对数据处理存在疑问，可通过下方联系邮箱与我们沟通。</p>
+
+<h3>3.2 删除</h3>
+<p>用户可以随时在插件选项页删除单条账号配置；卸载扩展程序将清除全部本地存储数据。</p>
+
+<h2>4. 第三方服务</h2>
+<p>本插件未接入任何第三方统计、埋点、广告、错误监控、云服务SDK。插件内置的 jQuery、md5、base64 脚本为本地内置资源，不从外部CDN加载第三方资源，不存在第三方数据收集行为。</p>
+
+<h2>5. 儿童隐私</h2>
+<p>我们不会有意收集13周岁以下儿童的任何个人数据。如果发现无意中收集到未成年人相关数据，我们会立即执行删除。</p>
+
+<h2>6. 隐私政策的更新</h2>
+<p>我们可能会根据产品迭代更新此隐私政策。政策更新将修改页面顶部的更新日期，持续使用本插件即视为接受更新后的隐私政策。</p>
+
+<h2>7. 联系方式</h2>
+<p>如果您对本隐私政策有任何疑问或者需要进一步的信息，请通过以下邮箱联系我们：</p>
+<p>电子邮件：sofastnet@gmail.com</p>
+
+</body>
+</html>
